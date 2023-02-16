@@ -16,8 +16,15 @@ document.getElementById('calculator').addEventListener('click', function (event)
         inputField.value = inputField.value + char;
     }
 });
-
+let clicked = 3;
 document.getElementById('verify-btn').addEventListener('click', function () {
+    clicked--;
+    if (clicked === 0) {
+        document.location.reload();
+    }
+    else{
+        document.getElementById('try-time').innerText = clicked;
+    }
     const generatedPin = document.getElementById('get-pin').value;
     const givenPin = document.getElementById('input-field').value;
     const correctDisplay = document.getElementById('correct');
